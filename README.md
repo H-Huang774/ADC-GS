@@ -30,7 +30,7 @@ pip install submodules/simple-knn
 pip install -r requirements.txt
 ```
 ## Dataset
-Please download datasets from their official websites : [HyperNerf](https://github.com/google/hypernerf/releases/tag/v0.1), [Neural 3D Video](https://github.com/facebookresearch/Neural_3D_Video) and [Technicolor](https://www.interdigital.com/data_sets/light-field-dataset) <br><br>
+Please download datasets from their official websites : [HyperNerf](https://github.com/google/hypernerf/releases/tag/v0.1) and [Neural 3D Video](https://github.com/facebookresearch/Neural_3D_Video) <br><br>
 
 **Extracting point clouds from COLMAP:** 
 ```bash
@@ -40,7 +40,6 @@ conda activate colmapenv
 
 # automatically extract the frames and reorginize them
 python script/pre_n3v.py --videopath <dataset>/<scene>
-python script/pre_technicolor.py --videopath <dataset>/<scene>
 python script/pre_hypernerf.py --videopath <dataset>/<scene>
 
 # downsample dense point clouds
@@ -49,7 +48,7 @@ python script/downsample_point.py \
 ```
 
 
-After running COLMAP, Neural 3D Video and Technicolor datasets are orginized as follows:
+After running COLMAP, HyperNerf and Neural 3D Video datasets are orginized as follows:
 ```
 ├── data
 │   | n3v
