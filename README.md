@@ -72,20 +72,8 @@ After running COLMAP, Neural 3D Video and Technicolor datasets are orginized as 
 bash train_n3v.sh
 
 ## Acknowledgements
-This code is based on [E-D3DGS](https://github.com/JeongminB/E-D3DGS), [CompGS] (https://github.com/LiuXiangrui/CompGS)
+This code is based on [E-D3DGS](https://github.com/JeongminB/E-D3DGS), [CompGS] (https://github.com/LiuXiangrui/CompGS) and [3DGS](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/).
 
 ## Citation
 If you find our code or paper useful, please consider citing:
-```
-@INPROCEEDINGS{10887742,
-  author={Huang, He and Huang, Wenjie and Yang, Qi and Xu, Yiling and Li, Zhu},
-  booktitle={ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
-  title={A Hierarchical Compression Technique for 3D Gaussian Splatting Compression}, 
-  year={2025},
-  volume={},
-  number={},
-  pages={1-5},
-  keywords={Visualization;Three-dimensional displays;Octrees;Termination of employment;Transforms;Signal processing;Rendering (computer graphics);Acoustics;Time complexity;Speech processing;3D Gaussian Splatting;Compression},
-  doi={10.1109/ICASSP49660.2025.10887742}}
-```
-And thanks to the authors of [3DGS](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/) for their excellent code!
+
