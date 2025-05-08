@@ -72,7 +72,7 @@ After running COLMAP, Neural 3D Video and Technicolor datasets are orginized as 
 bash train_n3v.sh
 
 ## Acknowledgements
-This code is based on [E-D3DGS](https://github.com/JeongminB/E-D3DGS), [CompGS] (https://github.com/LiuXiangrui/CompGS) and [3DGS](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/).
+This code is based on [E-D3DGS](https://github.com/JeongminB/E-D3DGS), [CompGS](https://github.com/LiuXiangrui/CompGS) and [3DGS](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/).
 
 ## Citation
 If you find our code or paper useful, please consider citing:
