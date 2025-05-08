@@ -1,20 +1,26 @@
-# [ICASSP'25] HGSC
-Official Pytorch implementation of **A Hierarchical Compression Technique for 3D Gaussian Splatting Compression**.
+# [IJCAI2025] ADC-GS
+Official Pytorch implementation of **ADC-GS: Anchor-Driven Deformable and Compressed Gaussian Splatting for Dynamic Scene Reconstruction**.
 
 <p align="center">
   <img src="imgs/framework.png"  style="width:80%">
 </p>
 
-[[`Arxiv`](https://arxiv.org/abs/2411.06976)]  [[`Github`](https://github.com/H-Huang774/HGSC)]
+[[`Arxiv`]()]  [[`Github`](https://github.com/H-Huang774/ADC-GS)]
+
+## Performance
+<p align="center">
+  <img src="imgs/fps_vs_psnr_size.png"  style="width:80%">
+</p>
+
 ## Installation
 ```
-conda create -n hgsc python=3.8
-conda activate hgsc
+conda create -n adc_gs python=3.8
+conda activate adc_gs
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
 
 # Clone this repository
-git clone https://github.com/H-Huang774/HGSC.git
-cd HGSC
+git clone https://github.com/H-Huang774/ADC-GS.git
+cd ADC-GS
 
 # Install submodules
 pip install submodules/diff-gaussian-rasterization
@@ -24,36 +30,52 @@ pip install submodules/simple-knn
 pip install -r requirements.txt
 ```
 ## Dataset
-Please organize the dataset with the trained pc.ply like below:
+Please download datasets from their official websites : [HyperNerf](https://github.com/google/hypernerf/releases/tag/v0.1), [Neural 3D Video](https://github.com/facebookresearch/Neural_3D_Video) and [Technicolor](https://www.interdigital.com/data_sets/light-field-dataset) <br><br>
+
+**Extracting point clouds from COLMAP:** 
+```bash
+# setup COLMAP 
+bash script/colmap_setup.sh
+conda activate colmapenv 
+
+# automatically extract the frames and reorginize them
+python script/pre_n3v.py --videopath <dataset>/<scene>
+python script/pre_technicolor.py --videopath <dataset>/<scene>
+python script/pre_hypernerf.py --videopath <dataset>/<scene>
+
+# downsample dense point clouds
+python script/downsample_point.py \
+<location>/<scene>/colmap/dense/workspace/fused.ply <location>/<scene>/points3D_downsample.ply
 ```
-Results/
-├── big_scenes/
-│   ├──data_name (like Train)
-│   │   ├── cameras.json
-│   │   ├── point_cloud.ply
-├── small_scenes/
-│   ├──data_name
-│   │   ├── cameras.json
-│   │   ├── point_cloud.ply
-big_scenes:
-[[`Mip-nerf 360`] (https://jonbarron.info/mipnerf360)] 
-[[`Deepblending`] (https://github.com/Phog/DeepBlending)] 
-[[`Tanks and temples`] (https://www.tanksandtemples.org/download/)]
-small_scenes:
-[[`BungeeNeRF`] ((https://drive.google.com/file/d/1nBLcf9Jrr6sdxKa1Hbd47IArQQ_X8lww/view?usp=sharing)/[百度网盘[提取码:4whv]](https://pan.baidu.com/s/1AUYUJojhhICSKO2JrmOnCA))] 
-[[`PKU-DyMVHumans`] (https://pku-dymvhumans.github.io)]
+
+
+After running COLMAP, Neural 3D Video and Technicolor datasets are orginized as follows:
 ```
-##Run
+├── data
+│   | n3v
+│     ├── cook_spinach
+│       ├── colmap
+│       ├── images
+│           ├── cam01
+│               ├── 0000.png
+│               ├── 0001.png
+│               ├── ...
+│           ├── cam02
+│               ├── 0000.png
+│               ├── 0001.png
+│               ├── ...
+│     ├── cut_roasted_beef
+|     ├── ...
 ```
-python run_big_scenes.py
-python rrun_small_scenes.py
-```
-##Evaluation
-```
-python metric_scenes.py
-```
+## Training/Rendering/Metric
+
+bash train_n3v.sh
+
+## Acknowledgements
+This code is based on [E-D3DGS](https://github.com/JeongminB/E-D3DGS), [CompGS] (https://github.com/LiuXiangrui/CompGS)
+
 ## Citation
-If you find our code or paper helps, please consider citing:
+If you find our code or paper useful, please consider citing:
 ```
 @INPROCEEDINGS{10887742,
   author={Huang, He and Huang, Wenjie and Yang, Qi and Xu, Yiling and Li, Zhu},
