@@ -145,7 +145,7 @@ class Scene:
     def save_all(self):
         path = os.path.join(self.model_path, "compressed")
         npz_path = os.path.join(path,"bitstream.npz")
-        gpcc_codec_path = "/home/old/huanghe/GS_repository/HGSC/comodules/tmc/linux/tmc3"
+        gpcc_codec_path = "./submodules/tmc/linux/tmc3"
         self.gaussians.compress_gaussians(path, npz_path, gpcc_codec_path)
     def recordpoints(self, iteration, string):
         txtpath = os.path.join(self.model_path, "exp_log.txt")
