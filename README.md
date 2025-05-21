@@ -75,6 +75,7 @@ This code is based on [E-D3DGS](https://github.com/JeongminB/E-D3DGS), [CompGS](
 
 ## Citation
 If you find our code or paper useful, please consider citing:
+
 @article{huang2025adc,
   title={ADC-GS: Anchor-Driven Deformable and Compressed Gaussian Splatting for Dynamic Scene Reconstruction},
   author={Huang, He and Yang, Qi and Liu, Mufan and Xu, Yiling and Li, Zhu},
