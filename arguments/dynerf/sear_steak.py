@@ -14,7 +14,7 @@ ModelHiddenParams = dict(
     c2f_temporal_iter = 10000,
     deform_from_iter = 5000,
     total_num_frames = 300,
-    voxelize_iter = 25000,
+    voxelize_iter = 60000,
     ref_embedding_dim = 32,
     res_embedding_dim = 16,
     derive_factor = 10,
@@ -30,26 +30,26 @@ ModelHiddenParams = dict(
 OptimizationParams = dict(
     dataloader = True,
     batch_size = 1,
-    iterations = 30_000,
+    iterations = 80_000,
     #30_000
     maxtime = 300,
     #300
 
-    densify_from_iter = 4000,    
-    pruning_from_iter = 4000,
+    densify_from_iter = 9000,    
+    pruning_from_iter = 9000,
 
-    densify_grad_threshold_fine_init = 0.006,
-    densify_grad_threshold_after = 0.006,
+    densify_grad_threshold_fine_init = 0.008,
+    densify_grad_threshold_after = 0.008,
 
-    opacity_threshold_fine_init = 0.001,
-    opacity_threshold_fine_after = 0.001,
+    opacity_threshold_fine_init = 0.003,
+    opacity_threshold_fine_after = 0.003,
     
-    densify_until_iter = 25_000,
-    position_lr_max_steps = 30_000,
-    deformation_lr_max_steps = 30_000,
-    network_lr_max_steps=30_000,
+    densify_until_iter = 60_000,
+    position_lr_max_steps = 80_000,
+    deformation_lr_max_steps = 80_000,
+    network_lr_max_steps=80_000,
 
-    rate_control_start_iter = 12_000,
+    rate_control_start_iter = 15_000,
     compress_start_iter = 10_000,
 
     lambda_dssim = 0.2,
