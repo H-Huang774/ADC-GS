@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory
 
 import numpy as np
 import torch
-from simple-knn import distCUDA2
+from simple_knn import distCUDA2
 from plyfile import PlyElement, PlyData
 
 
