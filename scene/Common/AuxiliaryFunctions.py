@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory
 
 import numpy as np
 import torch
-from knn_dist import distance
+from simple-knn import distCUDA2
 from plyfile import PlyElement, PlyData
 
 
@@ -25,7 +25,7 @@ def adaptive_voxel_size(points: np.ndarray) -> float:
     :param points: input points, shape (N, 3).
     """
     points = torch.tensor(points, dtype=torch.float32, device='cuda')
-    dist = distance(points)
+    dist = distCUDA2(points)
     median_dist = torch.median(dist)
     torch.cuda.empty_cache()
     return median_dist.item()
