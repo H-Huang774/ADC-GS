@@ -77,11 +77,20 @@ This code is based on [E-D3DGS](https://github.com/JeongminB/E-D3DGS), [CompGS](
 If you find our code or paper useful, please consider citing:
 
 ```bibtex
-@article{huang2025adc,
-  title={ADC-GS: Anchor-Driven Deformable and Compressed Gaussian Splatting for Dynamic Scene Reconstruction},
-  author={Huang, He and Yang, Qi and Liu, Mufan and Xu, Yiling and Li, Zhu},
-  journal={arXiv preprint arXiv:2505.08196},
-  year={2025}
+@inproceedings{ijcai2025p132,
+  title     = {ADC-GS: Anchor-Driven Deformable and Compressed Gaussian Splatting for Dynamic Scene Reconstruction},
+  author    = {Huang, He and Yang, Qi and Liu, Mufan and Xu, Yiling and Li, Zhu},
+  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on
+               Artificial Intelligence, {IJCAI-25}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {James Kwok},
+  pages     = {1179--1187},
+  year      = {2025},
+  month     = {8},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2025/132},
+  url       = {https://doi.org/10.24963/ijcai.2025/132},
 }
 ```
+
 
