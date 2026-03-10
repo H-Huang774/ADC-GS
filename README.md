@@ -70,6 +70,10 @@ After running COLMAP, HyperNerf and Neural 3D Video datasets are orginized as fo
 
 bash train_n3v.sh
 
+## Training Notes
+
+To reproduce the quantitative results reported in the paper, we recommend using 30k training iterations, which is the setting used in our experiments. The repository default of 80k iterations is provided for users who want to further improve reconstruction quality (e.g., for visualization), at the cost of slightly longer training time. The rate–distortion trade-off in ADC-GS is primarily controlled by the parameter lambda_rate_control. In practice, the final compressed size is also influenced by the Gaussian pruning behavior. In particular, the parameter opacity_threshold_fine_after controls the pruning strength in the fine stage and therefore affects the number of remaining Gaussians, which indirectly impacts the final bitrate. In our experiments, opacity_threshold_fine_after is typically set within the range [0.001, 0.005], which provides stable sparsity across different scenes. Overall, lambda_rate_control mainly affects the optimization objective, while pruning thresholds influence the final sparsity of the representation.
+
 ## Acknowledgements
 This code is based on [E-D3DGS](https://github.com/JeongminB/E-D3DGS), [CompGS](https://github.com/LiuXiangrui/CompGS) and [3DGS](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/).
 
@@ -92,5 +96,6 @@ If you find our code or paper useful, please consider citing:
   url       = {https://doi.org/10.24963/ijcai.2025/132},
 }
 ```
+
 
 
